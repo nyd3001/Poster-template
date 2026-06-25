@@ -1,0 +1,237 @@
+% !TEX program = xelatex
+\documentclass[25pt, margin=0.5in, innermargin=0pt, blockverticalspace=0.4in, colspace=0.5in]{tikzposter}
+\geometry{paperwidth=46.8in,paperheight=33.1in}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{multirow,multicol}
+\usepackage[backend=biber,style=numeric]{biblatex}
+\usepackage{newpxtext,newpxmath}
+\usepackage{SUtheme}
+\usepackage{qrcode}
+
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\definecolor{pkugray}{HTML}{A9A9A9}
+\definecolor{pkured}{HTML}{8C0000}
+
+\addbibresource{refs.bib}
+
+\renewcommand{\arraystretch}{1.15}
+
+% set theme parameters
+\tikzposterlatexaffectionproofoff
+\usetheme{SUTheme}
+\usecolorstyle{SUStyle}
+
+\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault} 
+\usepackage[T1]{fontenc}
+\usepackage{setspace}
+\setstretch{1.10}
+
+
+% Title
+\title{\parbox{\linewidth}{\centering [Paper Title Placeholder: Your Paper Title Goes Here]}}
+\author{Author One\textsuperscript{1},
+    Author Two\textsuperscript{1,2},
+    Author Three\textsuperscript{1},
+    Author Four\textsuperscript{2}}
+\institute{\textsuperscript{1}Peking University, Beijing, China \quad \textsuperscript{2}Affiliation Placeholder}
+
+\titlegraphic{\includegraphics[height=9cm]{pkulogo/pku-white.png}}
+\titlegraphicleft{\includegraphics[height=9cm]{pkulogo/pku-white.png}}
+
+% ==========================================
+% 定义两排的绝对高度 (稍微调大，防止表格溢出撑破盒子)
+\newlength{\rowoneheight}
+\setlength{\rowoneheight}{12.5in} 
+
+\newlength{\rowtwoheight}
+\setlength{\rowtwoheight}{11.5in} 
+% ==========================================
+
+\begin{document}
+
+\maketitle
+\centering
+\fontsize{32pt}{38pt}\selectfont
+
+
+% ==========================================
+% 强效修正左对齐：必须放在 \begin{columns} 之前立即执行
+\makeatletter
+\setlength{\TP@innermargin}{0pt}
+\setlength{\TP@visibletextwidth}{\textwidth}
+\makeatother
+% ==========================================
+
+% =====================================================================
+% 第一排 (ROW 1)
+% =====================================================================
+\begin{columns}
+
+    % 第一排，第一列
+    \column{0.3333}
+    \block{Section 1 Title}{%
+        \begin{minipage}[t][\rowoneheight][t]{\linewidth}
+            \vspace*{0pt}%
+            \begin{itemize}
+                \item \textbf{Point 1}: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                \item \textbf{Point 2}: Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                \item \textbf{Point 3}:
+                \begin{itemize}
+                    \item Sub-point A: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    \item Sub-point B: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    \item Sub-point C: Placeholder text for additional details.
+                    \item Sub-point D: Placeholder text for additional details.
+                \end{itemize}
+            \end{itemize}
+            \par\vspace*{\fill}%
+        \end{minipage}
+    }
+
+    % 第一排，第二列
+    \column{0.3333}
+    \block{Section 2 Title}{%
+        \begin{minipage}[t][\rowoneheight][t]{\linewidth}
+            \vspace*{0pt}%
+            Placeholder description for this section. Replace with your own content.
+
+            \begin{itemize}
+                \item \textbf{Key Point A}: Placeholder text describing the first key finding or comparison.
+                \item \textbf{Key Point B}: Placeholder text describing the second key finding.
+                \item \textbf{Key Point C}: Placeholder text describing the third key finding.
+            \end{itemize}
+            \vspace{0.2cm}
+            \resizebox{\linewidth}{!}{
+            \begin{tabular}{llrrr}
+            \toprule
+            Category & Method & Metric 1 & Metric 2 & Metric 3 \\
+            \midrule
+            Type A & Baseline 1 & 00.0 & 00.0 & 00.0 \\
+            Type A & Baseline 2 & 00.0 & 00.0 & 00.0 \\
+            Type B & Baseline 3 & 00.0 & 00.0 & 00.0 \\
+            Type B & Baseline 4 & 00.0 & 00.0 & 00.0 \\
+            \midrule
+            -- & \textbf{Ours} & \textbf{00.0} & \textbf{00.0} & \textbf{00.0} \\
+            \bottomrule
+            \end{tabular}
+            }
+            \par\vspace*{\fill}%
+        \end{minipage}
+    }
+
+    % 第一排，第三列
+    \column{0.3333}
+    \block{Section 3 Title}{%
+        \begin{minipage}[t][\rowoneheight][t]{\linewidth}
+            \vspace*{0pt}%
+            Placeholder description for experimental results or analysis section.
+
+            \begin{itemize}
+                \item \textbf{Setup}: Placeholder text describing the experimental setup.
+                \item \textbf{Tasks}: Placeholder text describing the evaluation tasks.
+                \item \textbf{Results}: Placeholder text summarizing key results.
+            \end{itemize}
+            \vspace{0.2cm}
+            \resizebox{\linewidth}{!}{
+            \begin{tabular}{lccccc}
+            \toprule
+            Method & Task 1 & Task 2 & Task 3 & Task 4 & Task 5 \\ \midrule
+            Baseline A & 00.0 & 00.0 & 00.0 & 00.0 & 00.0 \\
+            Baseline B & 00.0 & 00.0 & 00.0 & 00.0 & 00.0 \\
+            Baseline C & 00.0 & 00.0 & 00.0 & 00.0 & 00.0 \\ \midrule
+            \textbf{Ours} & \textbf{00.0} & \textbf{00.0} & \textbf{00.0} & \textbf{00.0} & \textbf{00.0} \\
+            \bottomrule
+            \end{tabular}
+            }
+            \vspace{0.3cm}
+
+            {\large Placeholder footnote text.}
+            \par\vspace*{\fill}%
+        \end{minipage}
+    }
+
+\end{columns}
+
+% =====================================================================
+% 第二排 (ROW 2)
+% =====================================================================
+\begin{columns}
+
+    % 第二排，第一列
+    \column{0.3333}
+    \block{Section 4 Title}{%
+        \begin{minipage}[t][\rowtwoheight][t]{\linewidth}
+            \vspace*{0pt}%
+            Placeholder description of your method or framework. Replace with your own figure and text.
+
+            \vspace{1.5cm}
+            \centering
+            % \includegraphics[width=0.98\linewidth]{figures/your_figure.png}
+            \textit{[Figure Placeholder: Insert your framework/method figure here]}
+            \par\vspace*{\fill}%
+        \end{minipage}
+    }
+
+    % 第二排，第二列
+    \column{0.3333}
+    \block{Section 5 Title}{%
+        \begin{minipage}[t][\rowtwoheight][t]{\linewidth}
+            \vspace*{0pt}%
+            Placeholder description for additional experimental results or ablation studies.
+
+            \begin{itemize}
+                \item \textbf{Setting 1}: Placeholder text for experimental setting description.
+                \item \textbf{Setting 2}: Placeholder text for evaluation metrics or tasks.
+                \item \textbf{Results}: Placeholder text summarizing findings.
+            \end{itemize}
+            \vspace{0.2cm}
+            \resizebox{\linewidth}{!}{
+            \begin{tabular}{lccccc}
+            \toprule
+            Method & Metric A & Metric B & Metric C & Metric D & \textbf{Overall} \\ \midrule
+            Baseline 1 & 00.0 & 00.0 & 00.0 & 00.0 & 00.0 \\
+            Baseline 2 & 00.0 & 00.0 & 00.0 & 00.0 & 00.0 \\
+            Baseline 3 & 00.0 & 00.0 & 00.0 & 00.0 & 00.0 \\ \midrule
+            \textbf{Ours} & \textbf{00.0} & \textbf{00.0} & \textbf{00.0} & \textbf{00.0} & \textbf{00.0} \\
+            \bottomrule
+            \end{tabular}
+            }
+            \vspace{0.3cm}
+
+            {\large Placeholder footnote text.}
+            \par\vspace*{\fill}%
+        \end{minipage}
+    }
+
+    % 第二排，第三列
+    \column{0.3333}
+    \block{Conclusion}{%
+        \begin{minipage}[t][\rowtwoheight][t]{\linewidth}
+            \vspace*{0pt}%
+            \vspace{0.3cm}
+            Placeholder conclusion text. Summarize the key contributions and findings of your work here. Highlight the significance and potential impact of the results.
+            
+            \vspace{2.0cm}
+            \begin{center}
+            \qrset{height=11cm}
+            \qrcode{https://github.com/your-repo/your-project}
+
+            \vspace{1.5cm}
+            \Large\textbf{github.com/your-repo/your-project}
+            \end{center}
+            \par\vspace*{\fill}%
+        \end{minipage}
+    }
+
+\end{columns}
+
+\end{document}

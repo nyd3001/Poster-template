@@ -1,0 +1,150 @@
+% SU Theme for the tikzposter package.
+%
+% Modified from https://www.overleaf.com/latex/templates/university-of-melbourne-poster-template/swfmhrpvfryh
+% The original author is  Jiyu Chen
+% modified by Qi Dang
+% Last Modified: 2021-01-10
+% Further modified for dual-logo support (left + right)
+
+% -- COLORS --
+
+% SU palette (repurposed for Xiaomi branding)
+% Base color
+\definecolor{SUBlue}{HTML}{8C0000}
+
+% Complementary colors
+\definecolor{SUOliveLeaf}{HTML}{01a2ff}
+\definecolor{SUSky}{HTML}{ACDEE6}
+\definecolor{SUWater}{HTML}{9BB2CE}
+\definecolor{SUFire}{HTML}{D95E00}
+
+% emory secondary palette
+\definecolor{Cyan}{HTML}{00aeef}
+\definecolor{SkyBlue}{HTML}{41b6e6}
+\definecolor{Teal}{HTML}{487f84}
+\definecolor{KellyGreen}{HTML}{348338}
+\definecolor{SeaGreen}{HTML}{006c5b}
+\definecolor{Olive}{HTML}{5c8118}
+\definecolor{Orange}{HTML}{c35413}
+\definecolor{Red}{HTML}{da291c}
+\definecolor{Magenta}{HTML}{c6007e}
+\definecolor{Purple}{HTML}{6558b1}
+\definecolor{Grape}{HTML}{6d2077}
+
+% neutrals palette
+\definecolor{Black}{HTML}{101820}
+\definecolor{CoolGray5}{HTML}{b1b3b3}
+\definecolor{CoolGray2}{HTML}{d0d0ce}
+\definecolor{CoolGray1}{HTML}{d9d9d9}
+
+% web palette
+\definecolor{LightYellow}{HTML}{ffde75}
+
+% tikzposter color palette
+\definecolorpalette{SUPalette} {
+    \definecolor{colorOne}{named}{SUBlue}
+    \definecolor{colorTwo}{named}{SUBlue}
+    \definecolor{colorThree}{named}{SUBlue}
+}
+
+% tikzposter style
+\definecolorstyle{SUStyle} {
+    \usecolorpalette{SUPalette}
+}{
+    % background
+    \colorlet{backgroundcolor}{white}
+    \colorlet{framecolor}{white}
+    % title colors
+    \colorlet{titlefgcolor}{white}
+    \colorlet{titlebgcolor}{SUBlue}
+    % block colors
+    \colorlet{blocktitlebgcolor}{colorOne}
+    \colorlet{blocktitlefgcolor}{white}
+    \colorlet{blockbodybgcolor}{white}
+    \colorlet{blockbodyfgcolor}{Black}
+    % innerblock colors
+    \colorlet{innerblocktitlebgcolor}{white}
+    \colorlet{innerblocktitlefgcolor}{Black}
+    \colorlet{innerblockbodybgcolor}{colorTwo}
+    \colorlet{innerblockbodyfgcolor}{Black}
+    % note colors
+    \colorlet{notefgcolor}{Black}
+    \colorlet{notebgcolor}{colorTwo}
+    \colorlet{noteframecolor}{colorTwo}
+}
+
+% -- STYLE --
+
+% background
+\definebackgroundstyle{SUBackgroundStyle}{
+    \draw[line width=0pt, color=framecolor, fill=backgroundcolor]
+    (bottomleft) rectangle (topright);
+}
+
+% title - background aligned with block content area
+\definetitlestyle{SUTitleStyle}{
+    width=\textwidth, roundedcorners=0, linewidth=0pt, innersep=1.5cm,
+    titletotopverticalspace=0mm, titletoblockverticalspace=20mm,
+    titlegraphictotitledistance=10pt
+}{
+   \draw[draw=none, fill=titlebgcolor]%
+   (\titleposleft,\titleposbottom) rectangle (\titleposright,\titlepostop);
+}
+
+% block
+\defineblockstyle{SUBlockStyle}{
+    titlewidthscale=1.0, bodywidthscale=1, roundedcorners=5
+}{
+    \draw[color=framecolor, fill=blockbodybgcolor,
+    rounded corners=\blockroundedcorners] (blockbody.south west)
+    rectangle (blockbody.north east);
+    \ifBlockHasTitle
+    \draw[color=framecolor, fill=blocktitlebgcolor,
+    rounded corners=\blockroundedcorners] (blocktitle.south west)
+    rectangle (blocktitle.north east);
+    \fi
+}
+
+% -- THEME -- 
+% SU theme
+\definelayouttheme{SUTheme}{
+    \usecolorstyle[colorPalette=SUPalette]{SUStyle}
+    \usebackgroundstyle{SUBackgroundStyle}
+    \usetitlestyle{SUTitleStyle}
+    \useblockstyle{SUBlockStyle}
+    \useinnerblockstyle{Default}
+    \usenotestyle{Default}
+}
+
+% -- TITLE FORMAT --
+
+% Support for dual logos: left and right
+\makeatletter
+
+% Define command for left title graphic
+\newcommand\titlegraphicleft[1]{\def\@titlegraphicleft{#1}}
+\titlegraphicleft{} % default empty
+
+\renewcommand\TP@maketitle{%
+   \centering
+   \begin{minipage}[c]{0.14\linewidth}
+        \centering
+        \@titlegraphicleft
+    \end{minipage}%
+    \hfill
+   \begin{minipage}[c]{0.68\linewidth}
+        \centering
+        \color{titlefgcolor}
+        {\bfseries \Huge \sc \@title \par}
+        \vspace*{1em}
+        {\Large \@author \par}
+        \vspace*{0.8em}
+        {\large \@institute}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.14\linewidth}
+        \centering
+        \@titlegraphic
+    \end{minipage}%
+}
+\makeatother
