@@ -3,10 +3,9 @@
 
 \usepackage{amsmath}
 \usepackage{amsfonts}
-\usepackage{amssymb}
 \usepackage{amsthm}
+\usepackage{amssymb}
 \usepackage{adjustbox}
-\usepackage{array}
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{multirow,multicol}
@@ -14,9 +13,10 @@
 \usepackage{qrcode}
 \usepackage[backend=biber,style=numeric]{biblatex}
 \usepackage{newpxtext,newpxmath}
-\usepackage{SUtheme}
+\input{../../SUtheme.sty}
+\renewcommand{\PosterRootPath}{../..}
 
-\addbibresource{refs.bib}
+\addbibresource{../../refs.bib}
 \input{poster-config.tex}
 
 \tikzposterlatexaffectionproofoff
@@ -35,24 +35,24 @@
 
 \begin{columns}
     \column{0.3333}
-    \PosterInputBlock{Motivation}{\PosterRowOneHeight}{sections/01-motivation.tex}
+    \PosterInputBlock{Highlights}{\PosterRowOneHeight}{sections/01-highlights.tex}
 
     \column{0.3333}
-    \PosterInputBlock{Method Overview}{\PosterRowOneHeight}{sections/02-method.tex}
+    \PosterInputBlock{Dataset Comparison}{\PosterRowOneHeight}{sections/02-dataset-comparison.tex}
 
     \column{0.3333}
-    \PosterInputBlock{Validation}{\PosterRowOneHeight}{sections/03-validation.tex}
+    \PosterInputBlock{Downstream Task Generalization}{\PosterRowOneHeight}{sections/03-downstream.tex}
 \end{columns}
 
 \begin{columns}
     \column{0.3333}
-    \PosterInputBlock{Analysis}{\PosterRowTwoHeight}{sections/04-analysis.tex}
+    \PosterInputBlock{Data Construction Framework}{\PosterRowTwoHeight}{sections/04-framework.tex}
 
     \column{0.3333}
-    \PosterInputBlock{Results}{\PosterRowTwoHeight}{sections/05-results.tex}
+    \PosterInputBlock{Audio Captioning Performance}{\PosterRowTwoHeight}{sections/05-captioning.tex}
 
     \column{0.3333}
-    \PosterInputBlock{Conclusion \& Contact}{\PosterRowTwoHeight}{sections/06-conclusion.tex}
+    \PosterInputBlock{Conclusion}{\PosterRowTwoHeight}{sections/06-conclusion.tex}
 \end{columns}
 
 \end{document}

@@ -1,0 +1,19 @@
+\textbf{DATE penalizes generic descriptions while rewarding fine-grained accuracy.}
+\begin{itemize}
+    \item \textbf{Mechanism:} single-sample similarity and cross-sample discriminability.
+    \item \textbf{Alignment:} align with human preference (preferred: 90.9 vs. non-preferred: 49.3).
+\end{itemize}
+
+\vspace{-0.08cm}
+\[
+    \mathrm{DATE}_i=\frac{2\cdot S_{sim,i}\cdot S_{dis,i}}{S_{sim,i}+S_{dis,i}}\in[0,1]
+\]
+
+\vspace{1.0cm}
+\textbf{Proof (Qualitative \& Quantitative)}
+\begin{itemize}
+    \item \textbf{A}: Traditional metrics \PosterHighlight{struggle to separate} ``Safe'' from ``Right''.
+    \item \textbf{B}: DATE mimics LLM-as-judge to \PosterHighlight{widen the gap} between ``Safe'' and ``Right''.
+\end{itemize}
+\centering
+\includegraphics[width=\linewidth,height=7.15in,keepaspectratio]{case_and_cdf.png}

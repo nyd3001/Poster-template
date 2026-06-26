@@ -1,0 +1,51 @@
+% !TEX program = xelatex
+\documentclass[25pt, margin=0.5in, innermargin=0pt, blockverticalspace=0.18in, colspace=0.45in]{tikzposter}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{qrcode}
+\usepackage{hyperref}
+\usepackage{newpxtext,newpxmath}
+\input{../../SUtheme.sty}
+\renewcommand{\PosterRootPath}{../..}
+
+\input{poster-config.tex}
+
+\tikzposterlatexaffectionproofoff
+\usetheme{SUTheme}
+\usecolorstyle{SUStyle}
+\PosterApplyTypography
+
+\begin{document}
+\maketitle
+\centering
+\PosterContentFontSize
+\PosterFixColumnAlignment
+
+\begin{columns}
+    \column{0.3333}
+    \PosterInputBlock{Highlights}{\PosterRowOneHeight}{sections/01-highlights.tex}
+
+    \column{0.3333}
+    \PosterInputBlock{Construction Framework \& Taxonomy}{\PosterRowOneHeight}{sections/02-framework.tex}
+
+    \column{0.3333}
+    \PosterInputBlock{Diversity \& Quality Validation}{\PosterRowOneHeight}{sections/03-validation.tex}
+\end{columns}
+
+\begin{columns}
+    \column{0.3333}
+    \PosterInputBlock{Metric Analysis}{\PosterRowTwoHeight}{sections/04-metric.tex}
+
+    \column{0.3333}
+    \PosterInputBlock{Benchmarking Results (Representative)}{\PosterRowTwoHeight}{sections/05-results.tex}
+
+    \column{0.3333}
+    \PosterInputBlock{Conclusion \& Contact}{\PosterRowTwoHeight}{sections/06-contact.tex}
+\end{columns}
+
+\end{document}

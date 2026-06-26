@@ -3,10 +3,9 @@
 
 \usepackage{amsmath}
 \usepackage{amsfonts}
-\usepackage{amssymb}
 \usepackage{amsthm}
+\usepackage{amssymb}
 \usepackage{adjustbox}
-\usepackage{array}
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{multirow,multicol}
@@ -14,9 +13,10 @@
 \usepackage{qrcode}
 \usepackage[backend=biber,style=numeric]{biblatex}
 \usepackage{newpxtext,newpxmath}
-\usepackage{SUtheme}
+\input{../../SUtheme.sty}
+\renewcommand{\PosterRootPath}{../..}
 
-\addbibresource{refs.bib}
+\addbibresource{../../refs.bib}
 \input{poster-config.tex}
 
 \tikzposterlatexaffectionproofoff
@@ -34,25 +34,17 @@
 \PosterFixColumnAlignment
 
 \begin{columns}
-    \column{0.3333}
-    \PosterInputBlock{Motivation}{\PosterRowOneHeight}{sections/01-motivation.tex}
+    \column{0.32}
+    \block{Highlights}{\input{sections/01-highlights.tex}}
+    \block{Framework}{\input{sections/02-framework.tex}}
 
-    \column{0.3333}
-    \PosterInputBlock{Method Overview}{\PosterRowOneHeight}{sections/02-method.tex}
+    \column{0.36}
+    \block{Evaluation (Retrieval)}{\input{sections/03-retrieval.tex}}
+    \block{Audio Encoder Comparison}{\input{sections/04-encoder.tex}}
 
-    \column{0.3333}
-    \PosterInputBlock{Validation}{\PosterRowOneHeight}{sections/03-validation.tex}
-\end{columns}
-
-\begin{columns}
-    \column{0.3333}
-    \PosterInputBlock{Analysis}{\PosterRowTwoHeight}{sections/04-analysis.tex}
-
-    \column{0.3333}
-    \PosterInputBlock{Results}{\PosterRowTwoHeight}{sections/05-results.tex}
-
-    \column{0.3333}
-    \PosterInputBlock{Conclusion \& Contact}{\PosterRowTwoHeight}{sections/06-conclusion.tex}
+    \column{0.31}
+    \block{Capability}{\input{sections/05-capability.tex}}
+    \block{Conclusion}{\input{sections/06-conclusion.tex}}
 \end{columns}
 
 \end{document}

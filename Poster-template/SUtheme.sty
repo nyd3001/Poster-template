@@ -1,24 +1,33 @@
-% SU Theme for the tikzposter package.
-%
-% Modified from https://www.overleaf.com/latex/templates/university-of-melbourne-poster-template/swfmhrpvfryh
-% The original author is  Jiyu Chen
-% modified by Qi Dang
-% Last Modified: 2021-01-10
-% Further modified for dual-logo support (left + right)
+% Reusable theme layer for tikzposter-based research posters.
 
-% -- COLORS --
+\providecommand{\PosterTitleLeftWidth}{0.14\linewidth}
+\providecommand{\PosterTitleCenterWidth}{0.68\linewidth}
+\providecommand{\PosterTitleRightWidth}{0.14\linewidth}
+\providecommand{\PosterTitleFont}{\bfseries \Huge}
+\providecommand{\PosterAuthorFont}{\Large}
+\providecommand{\PosterInstituteFont}{\large}
+\providecommand{\PosterTitleYOffset}{0pt}
+\providecommand{\PosterLeftLogoYOffset}{0pt}
+\providecommand{\PosterRightLogoYOffset}{0pt}
+\providecommand{\PosterTitleAuthorGap}{1em}
+\providecommand{\PosterAuthorInstituteGap}{0.8em}
+\providecommand{\PosterLeftLogo}{}
+\providecommand{\PosterRightLogo}{}
+\providecommand{\PosterHighlightColor}{highlightColor}
+\providecommand{\PosterRowOneHeight}{12.5in}
+\providecommand{\PosterRowTwoHeight}{11.5in}
+\providecommand{\PosterContentFontSize}{\fontsize{32pt}{38pt}\selectfont}
+\providecommand{\PosterLineStretch}{1.10}
+\providecommand{\PosterArrayStretch}{1.15}
+\providecommand{\PosterRootPath}{.}
+\providecommand{\PosterAssetPath}{.}
 
-% SU palette (repurposed for Xiaomi branding)
-% Base color
 \definecolor{SUBlue}{HTML}{8C0000}
-
-% Complementary colors
+\definecolor{highlightColor}{HTML}{8C0000}
 \definecolor{SUOliveLeaf}{HTML}{01a2ff}
 \definecolor{SUSky}{HTML}{ACDEE6}
 \definecolor{SUWater}{HTML}{9BB2CE}
 \definecolor{SUFire}{HTML}{D95E00}
-
-% emory secondary palette
 \definecolor{Cyan}{HTML}{00aeef}
 \definecolor{SkyBlue}{HTML}{41b6e6}
 \definecolor{Teal}{HTML}{487f84}
@@ -30,68 +39,53 @@
 \definecolor{Magenta}{HTML}{c6007e}
 \definecolor{Purple}{HTML}{6558b1}
 \definecolor{Grape}{HTML}{6d2077}
-
-% neutrals palette
 \definecolor{Black}{HTML}{101820}
+\definecolor{PosterTitleBg}{HTML}{8C0000}
+\definecolor{PosterTitleFg}{HTML}{FFFFFF}
 \definecolor{CoolGray5}{HTML}{b1b3b3}
 \definecolor{CoolGray2}{HTML}{d0d0ce}
 \definecolor{CoolGray1}{HTML}{d9d9d9}
-
-% web palette
 \definecolor{LightYellow}{HTML}{ffde75}
 
-% tikzposter color palette
 \definecolorpalette{SUPalette} {
     \definecolor{colorOne}{named}{SUBlue}
     \definecolor{colorTwo}{named}{SUBlue}
     \definecolor{colorThree}{named}{SUBlue}
 }
 
-% tikzposter style
 \definecolorstyle{SUStyle} {
     \usecolorpalette{SUPalette}
 }{
-    % background
     \colorlet{backgroundcolor}{white}
     \colorlet{framecolor}{white}
-    % title colors
-    \colorlet{titlefgcolor}{white}
-    \colorlet{titlebgcolor}{SUBlue}
-    % block colors
+    \colorlet{titlefgcolor}{PosterTitleFg}
+    \colorlet{titlebgcolor}{PosterTitleBg}
     \colorlet{blocktitlebgcolor}{colorOne}
     \colorlet{blocktitlefgcolor}{white}
     \colorlet{blockbodybgcolor}{white}
     \colorlet{blockbodyfgcolor}{Black}
-    % innerblock colors
     \colorlet{innerblocktitlebgcolor}{white}
     \colorlet{innerblocktitlefgcolor}{Black}
     \colorlet{innerblockbodybgcolor}{colorTwo}
     \colorlet{innerblockbodyfgcolor}{Black}
-    % note colors
     \colorlet{notefgcolor}{Black}
     \colorlet{notebgcolor}{colorTwo}
     \colorlet{noteframecolor}{colorTwo}
 }
 
-% -- STYLE --
-
-% background
 \definebackgroundstyle{SUBackgroundStyle}{
     \draw[line width=0pt, color=framecolor, fill=backgroundcolor]
     (bottomleft) rectangle (topright);
 }
 
-% title - background aligned with block content area
 \definetitlestyle{SUTitleStyle}{
     width=\textwidth, roundedcorners=0, linewidth=0pt, innersep=1.5cm,
     titletotopverticalspace=0mm, titletoblockverticalspace=20mm,
     titlegraphictotitledistance=10pt
 }{
-   \draw[draw=none, fill=titlebgcolor]%
-   (\titleposleft,\titleposbottom) rectangle (\titleposright,\titlepostop);
+   \draw[draw=none, fill=titlebgcolor](\titleposleft,\titleposbottom) rectangle (\titleposright,\titlepostop);
 }
 
-% block
 \defineblockstyle{SUBlockStyle}{
     titlewidthscale=1.0, bodywidthscale=1, roundedcorners=5
 }{
@@ -105,8 +99,6 @@
     \fi
 }
 
-% -- THEME -- 
-% SU theme
 \definelayouttheme{SUTheme}{
     \usecolorstyle[colorPalette=SUPalette]{SUStyle}
     \usebackgroundstyle{SUBackgroundStyle}
@@ -116,35 +108,59 @@
     \usenotestyle{Default}
 }
 
-% -- TITLE FORMAT --
+\newcommand{\PosterBlock}[3]{%
+    \block{#1}{%
+        \begin{minipage}[t][#2][t]{\linewidth}
+            \vspace*{0pt}%
+            #3%
+            \par\vfill
+        \end{minipage}%
+    }%
+}
 
-% Support for dual logos: left and right
+\newcommand{\PosterInputBlock}[3]{\PosterBlock{#1}{#2}{\input{#3}}}
+\newcommand{\PosterHighlight}[1]{\textcolor{\PosterHighlightColor}{\textbf{#1}}}
+\newcommand{\PosterSmallNote}[1]{{\large\textcolor{CoolGray5}{#1}}}
+\newcommand{\PosterApplyTypography}{%
+    \usepackage[scaled]{helvet}%
+    \renewcommand\familydefault{\sfdefault}%
+    \usepackage[T1]{fontenc}%
+    \usepackage{setspace}%
+    \setstretch{\PosterLineStretch}%
+    \renewcommand{\arraystretch}{\PosterArrayStretch}%
+}
 \makeatletter
-
-% Define command for left title graphic
+\newcommand{\PosterFixColumnAlignment}{%
+    \setlength{\TP@innermargin}{0pt}%
+    \setlength{\TP@visibletextwidth}{\textwidth}%
+}
 \newcommand\titlegraphicleft[1]{\def\@titlegraphicleft{#1}}
-\titlegraphicleft{} % default empty
-
+\titlegraphicleft{}
 \renewcommand\TP@maketitle{%
    \centering
-   \begin{minipage}[c]{0.14\linewidth}
+   \begin{minipage}[c]{\PosterTitleLeftWidth}
         \centering
-        \@titlegraphicleft
+        \raisebox{\PosterLeftLogoYOffset}{\@titlegraphicleft}
     \end{minipage}%
     \hfill
-   \begin{minipage}[c]{0.68\linewidth}
+   \begin{minipage}[c]{\PosterTitleCenterWidth}
         \centering
         \color{titlefgcolor}
-        {\bfseries \Huge \sc \@title \par}
-        \vspace*{1em}
-        {\Large \@author \par}
-        \vspace*{0.8em}
-        {\large \@institute}
+        \raisebox{\PosterTitleYOffset}{%
+            \begin{minipage}{\linewidth}
+                \centering
+                {\PosterTitleFont \@title \par}
+                \vspace*{\PosterTitleAuthorGap}
+                {\PosterAuthorFont \@author \par}
+                \vspace*{\PosterAuthorInstituteGap}
+                {\PosterInstituteFont \@institute}
+            \end{minipage}%
+        }
     \end{minipage}%
     \hfill
-    \begin{minipage}[c]{0.14\linewidth}
+    \begin{minipage}[c]{\PosterTitleRightWidth}
         \centering
-        \@titlegraphic
+        \raisebox{\PosterRightLogoYOffset}{\@titlegraphic}
     \end{minipage}%
 }
 \makeatother

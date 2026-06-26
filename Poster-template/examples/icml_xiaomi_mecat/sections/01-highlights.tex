@@ -1,0 +1,26 @@
+\textbf{Motivation.}
+\begin{itemize}
+    \item Existing audio benchmarks fail to assess fine-grained understanding.
+    \item Annotations are often coarse, generic, or single-perspective.
+    \item Evaluation metrics penalize novel details while tolerating overly safe descriptions.
+\end{itemize}
+
+\vspace{0.25cm}
+\textbf{Solution.}
+\begin{itemize}
+    \item MECAT builds a multi-expert pipeline for detailed audio understanding.
+    \item LLM-CoT synthesizes expert outputs into dense captions and QA pairs.
+    \item DATE rewards specific details and penalizes generic terms.
+\end{itemize}
+
+\vspace{0.25cm}
+\textbf{Key advantages.}
+\begin{itemize}
+    \item \textbf{Scale}: \PosterHighlight{20K} clips from ACAV100M across extended audio domains.
+    \item \textbf{Density (Per Clip)}:
+    \begin{itemize}
+        \item Caption: \PosterHighlight{18} refs spanning systemic, content-related/unrelated aspects.
+        \item QA: \PosterHighlight{5} pairs probing perception, analysis, and reasoning capabilities.
+    \end{itemize}
+    \item \textbf{Discrimination}: DATE robustly separates accurate details from vague errors.
+\end{itemize}

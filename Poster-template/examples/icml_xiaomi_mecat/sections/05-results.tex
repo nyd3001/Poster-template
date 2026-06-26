@@ -1,0 +1,40 @@
+\textbf{Captioning:} Top LALMs improve overall scores, but
+\begin{itemize}
+    \item exhibit a \PosterHighlight{severe speech-centric bias}
+    \item struggle to describe content-unrelated acoustic environments.
+\end{itemize}
+
+\vspace{0.18cm}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lcccccccccc@{}}
+\toprule
+\multirow{2}{*}{Model} & \multicolumn{2}{c}{Systemic} & \multicolumn{2}{c}{Speech} & \multicolumn{2}{c}{Music} & \multicolumn{2}{c}{Sound} & \multirow{2}{*}{Env} & \multirow{2}{*}{Score$_\text{Cap}$} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+ & Long & Short & Pure & Mixed & Pure & Mixed & Pure & Mixed & & \\
+\midrule
+Kimi-Audio & 49.5 & 54.2 & 30.0 & 31.3 & 27.7 & 16.9 & 43.1 & 16.2 & 7.0 & 32.8 \\
+Qwen2.5-Omni & 61.1 & 56.5 & 39.9 & 40.9 & 32.1 & 30.9 & 50.7 & 23.8 & 17.9 & 42.6 \\
+Qwen3-Omni-Flash & \textbf{65.7} & 62.5 & 59.2 & 59.9 & \textbf{57.4} & 32.5 & \textbf{55.8} & \textbf{31.6} & \textbf{27.1} & 52.9 \\
+Gemini-3-Pro & 64.9 & \textbf{65.8} & \textbf{60.5} & \textbf{62.4} & 49.8 & \textbf{39.8} & 51.6 & 30.7 & 26.1 & \textbf{53.1} \\
+\bottomrule
+\end{tabular}}
+
+\vspace{0.5cm}
+\textbf{QA:} Models handle semantic questions well, but
+\begin{itemize}
+    \item struggle with \PosterHighlight{acoustic quality} and \PosterHighlight{sound-characteristic reasoning}.
+    \item fail to surpass the 40-point threshold in Quality Assessment.
+\end{itemize}
+
+\vspace{0.18cm}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+Model & \begin{tabular}{@{}c@{}}Direct\\Perception\end{tabular} & \begin{tabular}{@{}c@{}}Sound\\Characteristics\end{tabular} & \begin{tabular}{@{}c@{}}Quality\\Assessment\end{tabular} & \begin{tabular}{@{}c@{}}Inference\\Judgment\end{tabular} & \begin{tabular}{@{}c@{}}Application\\Context\end{tabular} & Score$_\text{QA}$ \\
+\midrule
+Kimi-Audio & 45.6 & 39.2 & 18.7 & 48.9 & 41.2 & 38.0 \\
+Qwen2.5-Omni & \textbf{57.8} & 52.9 & \textbf{39.1} & 53.2 & 50.8 & 49.6 \\
+Qwen3-Omni-Flash & 48.0 & 45.9 & 29.5 & 56.7 & 54.8 & 46.7 \\
+Gemini-3-Pro & 55.5 & \textbf{54.4} & 37.7 & \textbf{57.3} & \textbf{56.6} & \textbf{51.5} \\
+\bottomrule
+\end{tabular}}

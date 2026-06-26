@@ -1,0 +1,25 @@
+Models pre-trained on each captioning dataset are evaluated on diverse downstream tasks to assess how dataset quality translates to generalizable representations.
+
+\begin{itemize}
+    \item \textbf{Training}: Frozen Audio encoder and LLM; only the MLP adapter is fine-tuned
+    \item \textbf{Tasks}: Speech, Sound, Music and Paralanguage
+    \item \textbf{Results}: Superior or competitive performance is achieved across all domains
+\end{itemize}
+\vspace{0.2cm}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lcccccccccc}
+\toprule
+\multirow{3}{*}{\begin{tabular}[c]{@{}l@{}}Training \\ Dataset\end{tabular}} & \multicolumn{6}{c}{Speech $\downarrow$} & \multicolumn{2}{c}{Sound $\uparrow$} & Music $\uparrow$ & Other $\uparrow$ \\ \cmidrule(lr){2-7} \cmidrule(lr){8-9} \cmidrule(lr){10-10} \cmidrule(lr){11-11}
+& \multicolumn{3}{c}{AISHELL-2} & \multicolumn{2}{c}{LibriSpeech} & \begin{tabular}[c]{@{}c@{}}Common\\[-2pt] Voice\end{tabular} & General & Vocal & Instrument & Emotion \\ \cmidrule(lr){2-4} \cmidrule(lr){5-6} \cmidrule(lr){7-7}
+& Android & IOS & MIC & Clean & Other & French & VGGSound & VocalSnd & NSynth & IEMOCAP \\ \midrule
+AudioSetCaps & 82.7 & 77.8 & 81.7 & 51.6 & 70.2 & 84.7 & 22.4 & 91.4 & 67.0 & 17.6 \\
+Auto-ACD & 89.1 & 78.2 & 88.6 & 54.6 & 76.5 & 85.7 & 22.5 & 90.2 & 46.1 & 24.1 \\
+WavCaps & 83.2 & 74.2 & 77.9 & 54.3 & 74.0 & 85.2 & 21.2 & 91.5 & \textbf{69.1} & 19.9 \\
+Sound-VeCaps & 87.3 & 79.5 & 87.9 & 51.8 & 70.1 & 85.6 & 22.9 & 90.8 & 45.0 & 20.3 \\
+Combined$^\dagger$ & 84.2 & 76.4 & 82.3 & 41.5 & 59.4 & 83.0 & \textbf{34.6} & \textbf{92.6} & 44.0 & 19.8 \\ \midrule
+\textbf{ACAVCaps} & \textbf{58.3} & \textbf{56.5} & \textbf{57.1} & \textbf{19.7} & \textbf{33.7} & \textbf{50.0} & 20.4 & 92.1 & 64.7 & \textbf{28.9} \\
+\bottomrule
+\end{tabular}}
+\vspace{0.3cm}
+
+{\large $^\dagger$Combined: AudioSetCaps, Auto-ACD, WavCaps, Sound-VeCaps}

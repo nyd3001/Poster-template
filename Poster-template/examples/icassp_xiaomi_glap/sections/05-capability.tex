@@ -1,0 +1,31 @@
+\begin{itemize}
+    \item \textbf{Zero-Shot}: outperforms all baselines in keyword spotting (KWS).
+\end{itemize}
+
+\vspace{0.5cm}
+\begin{center}
+\fontsize{26pt}{30pt}\selectfont
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{r|cccc|cccc|ccc}
+\toprule
+& \multicolumn{4}{c|}{Sound} & \multicolumn{4}{c|}{Music} & \multicolumn{3}{c}{Speech} \\
+Method & ESC50 & FSD50K & US8K & CD & VS & GTZAN & NS & BO & SCV1 & SCV2 & FSC \\
+\midrule
+BLAT & 80.6 & 31.3 & 77.3 & 17.6 & 53.9 & 10.0 & 9.0 & 31.4 & 3.9 & 2.2 & 0.4 \\
+MS-CLAP-23 & 88.2 & 40.3 & 75.0 & \textbf{29.7} & 69.2 & 58.4 & \textbf{47.9} & 46.6 & 16.4 & 2.5 & 0.3 \\
+L-CLAP & \textbf{91.0} & 21.5 & 77.0 & 18.3 & \textbf{79.3} & 47.4 & 26.1 & 40.2 & 3.8 & 4.1 & 0.3 \\
+M2D-Clap & 75.5 & 40.8 & 72.4 & 17.7 & 42.3 & \textbf{75.2} & 23.4 & 47.0 & 3.0 & 2.1 & 0.4 \\
+\hline
+\textbf{GLAP} & 88.8 & \textbf{40.9} & \textbf{78.9} & 20.5 & 75.1 & 69.6 & 31.3 & 36.5 & \textbf{96.6} & \textbf{95.8} & \textbf{75.6} \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vspace{0.8cm}
+
+\begin{itemize}
+    \item \textbf{Multilingual}: Zero-shot KWS across \textbf{50 languages}.
+\end{itemize}
+
+\begin{tikzfigure}[]
+    \includegraphics[width=0.90\linewidth]{multilingual_result_split.pdf}
+\end{tikzfigure}
