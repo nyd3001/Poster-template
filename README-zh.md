@@ -126,14 +126,10 @@ Logo 文件使用颜色/变体命名，例如 `original.png`、`white.png`、`re
 
 数值越小，第二行越靠上；数值越大，第二行越靠下。用 `\PosterRowTwoHeight` 调整第二行内部高度。
 
-## 示例
-
-本仓库保留上传到 GitHub 的公开示例：
-
-- `examples/icml_xiaomi_mecat/`：ICML + Xiaomi
+## 示例一（标准模板）：`examples/icml_xiaomi_mecat/`
 
 ![ICML Xiaomi MeCAT poster](https://cdn.jsdelivr.net/gh/nyd3001/Poster-template@main/examples/icml_xiaomi_mecat/preview.jpg)
 
-- `examples/icml_xiaomi_mecat_light/`：ICML light + Xiaomi light
+## 示例二（标准模板）：`examples/icml_xiaomi_mecat_light/`
 
 ![ICML Xiaomi MeCAT poster light theme](https://cdn.jsdelivr.net/gh/nyd3001/Poster-template@main/examples/icml_xiaomi_mecat_light/preview.jpg)

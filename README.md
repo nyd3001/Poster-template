@@ -126,14 +126,10 @@ For two-row posters, move the second row by changing first-row height after load
 
 Smaller values move the second row upward; larger values move it downward. Use `\PosterRowTwoHeight` to tune the second row's internal height.
 
-## Examples
-
-Public examples kept in this repository:
-
-- `examples/icml_xiaomi_mecat/`: ICML + Xiaomi
+## Examples (Standard Template) `examples/icml_xiaomi_mecat/`
 
 ![ICML Xiaomi MeCAT poster](https://cdn.jsdelivr.net/gh/nyd3001/Poster-template@main/examples/icml_xiaomi_mecat/preview.jpg)
 
-- `examples/icml_xiaomi_mecat_light/`: ICML light + Xiaomi light
+## Example (Light Template) `examples/icml_xiaomi_mecat_light/`
 
 ![ICML Xiaomi MeCAT poster light theme](https://cdn.jsdelivr.net/gh/nyd3001/Poster-template@main/examples/icml_xiaomi_mecat_light/preview.jpg)
