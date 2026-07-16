@@ -124,5 +124,5 @@ Smaller values move the second row upward; larger values move it downward. Use `
 
 Public examples kept in this repository:
 
-- `examples/icml_xiaomi_mecat/`: ICML + Xiaomi ([PNG preview](examples/icml_xiaomi_mecat/main.png))
-- `examples/icml_xiaomi_mecat_light/`: ICML light + Xiaomi light ([PNG preview](examples/icml_xiaomi_mecat_light/main.png))
+- `examples/icml_xiaomi_mecat/`: ICML + Xiaomi ([PNG preview](https://cdn.jsdelivr.net/gh/nyd3001/Poster-template@main/examples/icml_xiaomi_mecat/main.png))
+- `examples/icml_xiaomi_mecat_light/`: ICML light + Xiaomi light ([PNG preview](https://cdn.jsdelivr.net/gh/nyd3001/Poster-template@main/examples/icml_xiaomi_mecat_light/main.png))
