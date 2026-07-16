@@ -4,6 +4,8 @@
 
 这是一个可复用的 `tikzposter` 科研海报模板。内容、会议布局和机构品牌样式相互分离，方便切换主题而不重写海报。
 
+作者：Yadong Niu，MiLM Plus，Xiaomi Inc.
+
 ## 快速开始
 
 ```bash
@@ -122,7 +124,7 @@ Logo 文件使用颜色/变体命名，例如 `original.png`、`white.png`、`re
 
 ## 示例
 
+本仓库保留上传到 GitHub 的公开示例：
+
 - `examples/icml_xiaomi_mecat/`：ICML + Xiaomi
 - `examples/icml_xiaomi_mecat_light/`：ICML light + Xiaomi light
-- `examples/icassp_xiaomi_acavcaps/`：ICASSP + Xiaomi
-- `examples/icassp_xiaomi_glap/`：ICASSP + Xiaomi

@@ -1,0 +1,10 @@
+.DS_Store
+**/.DS_Store
+
+# Keep only the public ICML MeCAT examples in the GitHub repository.
+examples/*
+!examples/icml_xiaomi_mecat/
+!examples/icml_xiaomi_mecat/**
+examples/icml_xiaomi_mecat/icml-mecat.pdf
+!examples/icml_xiaomi_mecat_light/
+!examples/icml_xiaomi_mecat_light/**

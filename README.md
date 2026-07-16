@@ -4,6 +4,8 @@
 
 A reusable `tikzposter` template for research posters. Content, conference layout, and institution branding are separated so you can switch themes without rewriting the poster.
 
+Author: Yadong Niu, MiLM Plus, Xiaomi Inc.
+
 ## Quick Start
 
 ```bash
@@ -122,7 +124,7 @@ Smaller values move the second row upward; larger values move it downward. Use `
 
 ## Examples
 
+Public examples kept in this repository:
+
 - `examples/icml_xiaomi_mecat/`: ICML + Xiaomi
 - `examples/icml_xiaomi_mecat_light/`: ICML light + Xiaomi light
-- `examples/icassp_xiaomi_acavcaps/`: ICASSP + Xiaomi
-- `examples/icassp_xiaomi_glap/`: ICASSP + Xiaomi
