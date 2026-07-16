@@ -67,6 +67,12 @@ themes/institution/*.tex 机构颜色和右侧 logo
 
 Logo 文件使用颜色/变体命名，例如 `original.png`、`white.png`、`red.png`、`orange.png`、`orange_wordmark.svg`。
 
+## 替换示例图片
+
+- 会议 logo：替换 `assets/conferences/<conference>/` 下的文件，或在 `poster-config.tex` 中覆盖 `\PosterLeftLogo`。
+- 机构 logo：替换 `assets/institutions/<institution>/` 下的文件，或在 `poster-config.tex` 中覆盖 `\PosterRightLogo`。
+- 结构图/框架图：替换 `examples/<example>/assets/framework.png`；该图片由 `examples/<example>/sections/02-framework.tex` 引用。
+
 ## 颜色
 
 机构主题定义颜色。可在 `poster-config.tex` 的主题加载之后覆盖：

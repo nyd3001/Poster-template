@@ -67,6 +67,12 @@ Override logos after loading themes:
 
 Logo files use color/variant names such as `original.png`, `white.png`, `red.png`, `orange.png`, and `orange_wordmark.svg`.
 
+## Replace Example Images
+
+- Conference logo: replace the files under `assets/conferences/<conference>/`, or override `\PosterLeftLogo` in `poster-config.tex`.
+- Institution logo: replace the files under `assets/institutions/<institution>/`, or override `\PosterRightLogo` in `poster-config.tex`.
+- Framework/structure figure: replace `examples/<example>/assets/framework.png`; it is included by `examples/<example>/sections/02-framework.tex`.
+
 ## Colors
 
 Institution themes define colors. Override them in `poster-config.tex` after theme inputs:
