@@ -4,8 +4,6 @@
 
 这是一个可复用的 `tikzposter` 科研海报模板。内容、会议布局和机构品牌样式相互分离，方便切换主题而不重写海报。
 
-作者：Yadong Niu，MiLM Plus，Xiaomi Inc.
-
 ## 快速开始
 
 ```bash

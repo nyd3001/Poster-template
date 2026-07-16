@@ -4,8 +4,6 @@
 
 A reusable `tikzposter` template for research posters. Content, conference layout, and institution branding are separated so you can switch themes without rewriting the poster.
 
-Author: Yadong Niu, MiLM Plus, Xiaomi Inc.
-
 ## Quick Start
 
 ```bash
