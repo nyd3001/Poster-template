@@ -124,5 +124,10 @@ Logo 文件使用颜色/变体命名，例如 `original.png`、`white.png`、`re
 
 本仓库保留上传到 GitHub 的公开示例：
 
-- `examples/icml_xiaomi_mecat/`：ICML + Xiaomi（[图片预览](https://cdn.jsdelivr.net/gh/nyd3001/Poster-template@main/examples/icml_xiaomi_mecat/preview.jpg)）
-- `examples/icml_xiaomi_mecat_light/`：ICML light + Xiaomi light（[图片预览](https://cdn.jsdelivr.net/gh/nyd3001/Poster-template@main/examples/icml_xiaomi_mecat_light/preview.jpg)）
+- `examples/icml_xiaomi_mecat/`：ICML + Xiaomi
+
+![ICML Xiaomi MeCAT poster](https://cdn.jsdelivr.net/gh/nyd3001/Poster-template@main/examples/icml_xiaomi_mecat/preview.jpg)
+
+- `examples/icml_xiaomi_mecat_light/`：ICML light + Xiaomi light
+
+![ICML Xiaomi MeCAT poster light theme](https://cdn.jsdelivr.net/gh/nyd3001/Poster-template@main/examples/icml_xiaomi_mecat_light/preview.jpg)
